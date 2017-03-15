@@ -132,7 +132,7 @@ if [ -n "$arg_rails_secret_key_base" ]; then
 elif [ ! $RAILS_SECRET_KEY_BASE = "" ]; then
   echo "RAILS_SECRET_KEY_BASE=$RAILS_SECRET_KEY_BASE" >> .env
 else
-  echo "RAILS_SECRET_KEY_BASE=$(rake -f ./railsApp/Rakefile secret)" >> .env
+  echo "RAILS_SECRET_KEY_BASE=$(ruby -e 'require "securerandom"' -e 'puts SecureRandom.hex 64')" >> .env
 fi
 
 exit 0
