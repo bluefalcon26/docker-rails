@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  rails:
+    container_name: ${RAILS_NAME}
+    restart: always
+    image: daprejean/rails:latest
+    volumes:
+    - railsApp:/railsApp
+    ports:
+    - "${RAILS_EXTERNAL_PORT}:3000"
+    environment:
+    - RAILS_ENV=${RAILS_RUN_ENV}
+    - SECRET_KEY_BASE=${RAILS_SECRET_KEY_BASE}
+    - HTTP_PROXY=${HTTP_PROXY}
+    - HTTPS_PROXY=${HTTP_PROXY}
+    - LOCAL_USER_ID=${LOCAL_USER_ID}
+    - LOCAL_GROUP_ID=${LOCAL_GROUP_ID}
