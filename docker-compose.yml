@@ -6,7 +6,7 @@ services:
     restart: always
     image: daprejean/rails:latest
     volumes:
-    - railsApp:/railsApp
+    - ./railsApp:/railsApp
     ports:
     - "${RAILS_EXTERNAL_PORT}:3000"
     environment:
