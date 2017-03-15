@@ -23,11 +23,12 @@ These script provide the basis for building a portable Ruby-on-Rails docker mach
     `docker build [--build-arg http_proxy=$http_proxy] [--build-arg https_proxy=$https_proxy] -t daprejean/rails:latest .`
 3. `git clone <yourRailsApp> ./railsApp`
 4. `./generate_env.sh [-p http_proxy] [-u local_user_id] [-g local_group_id] [-n container_name] [-p external_port] [-e rails_env] [-s secret_key_base]`
-5. `docker-compose up`
-6. If rails starts sucessfully, ctl+c and run
+5. Edit .env as necessary
+6. `docker-compose up`
+7. If rails starts sucessfully, ctl+c and run
     
     `docker-compose start`
-7. To restart the server, use `docker-compose restart` or stop/start.
+8. To restart the server, use `docker-compose restart` or stop/start.
 
     This will run `bundle` and `assets:precompile` before starting the rails server.
 
