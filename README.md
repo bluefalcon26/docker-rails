@@ -13,6 +13,7 @@ These script provide the basis for building a portable Ruby-on-Rails docker mach
 * git
 * docker
 * docker-compose
+* ruby and irb
 
 # Usage
 1. `mkdir 'yourRailsApp' && cd 'yourRailsApp'`
