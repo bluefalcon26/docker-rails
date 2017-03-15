@@ -12,7 +12,7 @@ services:
     environment:
     - RAILS_ENV=${RAILS_RUN_ENV}
     - SECRET_KEY_BASE=${RAILS_SECRET_KEY_BASE}
-    - HTTP_PROXY=${HTTP_PROXY}
-    - HTTPS_PROXY=${HTTP_PROXY}
+    - http_proxy=${HTTP_PROXY}
+    - https_proxy=${HTTPS_PROXY}
     - LOCAL_USER_ID=${LOCAL_USER_ID}
     - LOCAL_GROUP_ID=${LOCAL_GROUP_ID}

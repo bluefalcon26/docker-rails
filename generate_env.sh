@@ -67,12 +67,16 @@ fi
 # Default: blank
 if [ -n "$arg_http_proxy" ]; then
   echo "HTTP_PROXY=$arg_http_proxy" > .env
+  echo "HTTPS_PROXY=$arg_http_proxy" >> .env
 elif [ ! $HTTP_PROXY = "" ]; then
   echo "HTTP_PROXY=$HTTP_PROXY" > .env
+  echo "HTTPS_PROXY=$HTTPS_PROXY" >> .env
 elif [ ! $http_proxy = "" ]; then
   echo "HTTP_PROXY=$http_proxy" > .env
+  echo "HTTPS_PROXY=$https_proxy" >> .env
 else
-  echo "" > .env # always create new file
+  echo "HTTP_PROXY=" > .env
+  echo "HTTPS_PROXY=" >> .env
 fi
 
 # 2. LOCAL_USER_ID
