@@ -66,6 +66,6 @@ You don't need root for any of this setup, as long as your user is a member of g
 For more info, see http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
 
 # Troubleshooting
-* If you get an error from chown, you probably have selinux on. Try
+* If you get a permissions error from chown, you probably have selinux on. Try
 
-    `chcon -Rt svirt_sandbox_file_t /path/to/yourRailsApp`
+    `sudo chcon -Rt svirt_sandbox_file_t /path/to/yourRailsApp`
