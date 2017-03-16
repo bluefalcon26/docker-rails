@@ -135,8 +135,10 @@ if [ -n "$arg_rails_secret_key_base" ]; then
   echo "RAILS_SECRET_KEY_BASE=$arg_rails_secret_key_base" >> .env
 elif [ ! $RAILS_SECRET_KEY_BASE = "" ]; then
   echo "RAILS_SECRET_KEY_BASE=$RAILS_SECRET_KEY_BASE" >> .env
-else
+elif [ $(command -v ruby) ]; then
   echo "RAILS_SECRET_KEY_BASE=$(ruby -e 'require "securerandom"' -e 'puts SecureRandom.hex 64')" >> .env
+else
+  echo "RAILS_SECRET_KEY_BASE=" >> .env
 fi
 
 exit 0
