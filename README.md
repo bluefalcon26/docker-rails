@@ -31,6 +31,8 @@ These script provide the basis for building a portable Ruby-on-Rails docker mach
 8. If rails starts sucessfully, ctl+c and run
     
     `docker-compose start`
+    
+    Otherwise, see # Troubleshooting
 9. To restart the server, use `docker-compose restart` or stop/start.
 
     This will run `bundle` and `assets:precompile` before starting the rails server.
@@ -62,3 +64,8 @@ Then ctl+c to detach without stopping the machine.
 # Non-root setup
 You don't need root for any of this setup, as long as your user is a member of group "docker".
 For more info, see http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
+
+# Troubleshooting
+* If you get an error from chown, you probably have selinux on. Try
+
+    `chcon -Rt svirt_sandbox_file_t /path/to/yourRailsApp`
