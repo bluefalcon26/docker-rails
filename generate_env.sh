@@ -141,4 +141,20 @@ else
   echo "RAILS_SECRET_KEY_BASE=" >> .env
 fi
 
+# 8. RAILS_STAG_DB_PASS
+# Default: *empty
+if [ ! $RAILS_STAG_DB_PASS = "" ]; then
+	echo "RAILS_STAG_DB_PASS=$RAILS_STAG_DB_PASS" >> .env
+else
+	echo "RAILS_STAG_DB_PASS=" >> .env
+fi
+
+# 9. RAILS_PROD_DB_PASS
+# Default: *empty
+if [ ! $RAILS_PROD_DB_PASS = "" ]; then
+  echo "RAILS_PROD_DB_PASS=$RAILS_PROD_DB_PASS" >> .env
+else
+  echo "RAILS_PROD_DB_PASS=" >> .env
+fi
+
 exit 0
