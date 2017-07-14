@@ -141,7 +141,31 @@ else
   echo "RAILS_SECRET_KEY_BASE=" >> .env
 fi
 
-# 8. RAILS_STAG_DB_PASS
+# 8. RAILS_DEV_DB_USER
+# Default: *empty
+if [ ! $RAILS_DEV_DB_USER = "" ]; then
+  echo "RAILS_DEV_DB_USER=$RAILS_DEV_DB_USER" >> .env
+else
+  echo "RAILS_DEV_DB_USER=" >> .env
+fi
+
+# 9. RAILS_DEV_DB_PASS
+# Default: *empty
+if [ ! $RAILS_DEV_DB_PASS = "" ]; then
+  echo "RAILS_DEV_DB_PASS=$RAILS_DEV_DB_PASS" >> .env
+else
+  echo "RAILS_DEV_DB_PASS=" >> .env
+fi
+
+# 10. RAILS_STAG_DB_USER
+# Default: *empty
+if [ ! $RAILS_STAG_DB_USER = "" ]; then
+  echo "RAILS_STAG_DB_USER=$RAILS_STAG_DB_USER" >> .env
+else
+  echo "RAILS_STAG_DB_USER=" >> .env
+fi
+
+# 11. RAILS_STAG_DB_PASS
 # Default: *empty
 if [ ! $RAILS_STAG_DB_PASS = "" ]; then
 	echo "RAILS_STAG_DB_PASS=$RAILS_STAG_DB_PASS" >> .env
@@ -149,7 +173,15 @@ else
 	echo "RAILS_STAG_DB_PASS=" >> .env
 fi
 
-# 9. RAILS_PROD_DB_PASS
+# 12. RAILS_PROD_DB_USER
+# Default: *empty
+if [ ! $RAILS_PROD_DB_USER = "" ]; then
+  echo "RAILS_PROD_DB_USER=$RAILS_PROD_DB_USER" >> .env
+else
+  echo "RAILS_PROD_DB_USER=" >> .env
+fi
+
+# 13. RAILS_PROD_DB_PASS
 # Default: *empty
 if [ ! $RAILS_PROD_DB_PASS = "" ]; then
   echo "RAILS_PROD_DB_PASS=$RAILS_PROD_DB_PASS" >> .env
